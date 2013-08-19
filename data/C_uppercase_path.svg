@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="744.09448"
+   height="1052.3622"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="C_uppercase_path.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="0.22425739"
+     inkscape:cx="372.04724"
+     inkscape:cy="526.18109"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     id="layer1">
+    <g
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="text2985">
+      <path
+         d="M 291.47601,451.16241 291.47601,455.32257 C 290.14786,454.08562 288.72859,453.16114 287.2182,452.54913 285.72078,451.93718 284.12573,451.63119 282.43304,451.63116 279.0997,451.63119 276.54762,452.65333 274.77679,454.69757 273.00595,456.72884 272.12054,459.67155 272.12054,463.5257 272.12054,467.36685 273.00595,470.30956 274.77679,472.35382 276.54762,474.38507 279.0997,475.4007 282.43304,475.4007 284.12573,475.4007 285.72078,475.09471 287.2182,474.48273 288.72859,473.87075 290.14786,472.94627 291.47601,471.70929 L 291.47601,475.83038 C 290.09578,476.76788 288.63094,477.47101 287.08148,477.93976 285.545,478.40851 283.9174,478.64288 282.19867,478.64288 277.78459,478.64288 274.30804,477.29523 271.76898,474.59991 269.22992,471.89159 267.96039,468.20018 267.96039,463.5257 267.96039,458.83822 269.22992,455.14681 271.76898,452.45148 274.30804,449.74317 277.78459,448.38901 282.19867,448.38898 283.94344,448.38901 285.58407,448.62338 287.12054,449.0921 288.67,449.54786 290.12182,450.23796 291.47601,451.16241"
+         style=""
+         id="path2986" />
+    </g>
+  </g>
+</svg>

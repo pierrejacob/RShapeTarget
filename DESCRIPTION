@@ -1,0 +1,26 @@
+Package: RLetter
+Type: Package
+Title: What the package does (short line)
+Version: 1.0
+Date: 2013-08-18
+Author: Who wrote it
+Maintainer: Who to complain to <yourfault@somewhere.net>
+Description: More about what it does (maybe more than one line)
+License: What Licence is it under ?
+Depends:
+    Rcpp (>= 0.10.4),
+    XML,
+    stringr,
+    ggplot2
+LinkingTo: Rcpp
+Collate:
+    'create_svg_letter.R'
+    'plot_letter.R'
+    'RcppExports.R'
+    'extract_paths.R'
+    'distance_to_polygon.R'
+    'target_distribution.R'
+    'find_inner_polygons.R'
+    'RLetter-package.R'
+    'precomputed_shape_from_polygons.R'
+    'transform_list_of_polygons.R'

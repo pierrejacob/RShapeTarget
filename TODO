@@ -1,0 +1,18 @@
+SVG Path standard:
+http://www.w3.org/TR/SVG/paths.html
+
+Functions to compute (fast) distance to polygon
+whether or not a point is inside polygon
+
+http://stackoverflow.com/questions/15294343/calculating-the-distance-between-polygon-and-point-in-r
+https://stat.ethz.ch/pipermail/r-sig-geo/2010-January/007481.html
+http://cran.r-project.org/web/packages/gdistance/gdistance.pdf
+http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-to-polygon/content/p_poly_dist.m
+
+
+##
+- some letters like 'C' work but some letters like 'D' don't work with error message
+        Error in 1:(dim(points)[1]) : argument of length 0
+- when it works for letters make it work for words and arbitrary shapes
+- in particular given a list of shape find the outer shape and the inner shapes, 
+and then work out the corresponding target log density function
