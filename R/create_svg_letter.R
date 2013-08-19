@@ -1,4 +1,18 @@
-#'@export
+#' @rdname create_svg_letter
+#' @name create_svg_letter
+#' @aliases create_svg_letter
+#' @title Create SVG file with one letter
+#' @description
+#' This function creates a SVG file with one letter in it, and calls Inkscape
+#' to convert it into a path. It is assumed that Inkscape is configured to export
+#' SVG files WITHOUT relative coordinates (File > Inkscape Preferences > Allow relative coordinates).
+#' @param letter a character that should belong to \code{letters} or \code{LETTERS}.
+#' @return None.
+#' @details
+#' Inkscape must be installed for this function to work. Essentially it calls Inkscape from the command line
+#' with the following command:
+#' \code{inkscape FILENAME --select=ID --verb=ObjectToPath --verb=FileSave --verb=FileClose}
+#' @export
 create_svg_letter <- function(letter){
   if (!(letter %in% letters || letter %in% LETTERS)){
     stop("argument is not a letter")

@@ -11,8 +11,5 @@ http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-
 
 
 ##
-- some letters like 'C' work but some letters like 'D' don't work with error message
-        Error in 1:(dim(points)[1]) : argument of length 0
-- when it works for letters make it work for words and arbitrary shapes
-- in particular given a list of shape find the outer shape and the inner shapes, 
-and then work out the corresponding target log density function
+- The words work but not the sentences yet (create_target_from_words), because I have to pick a spacing between words...
+- Try to tackle arbitrary shapes from inkscape, make sure to check for intersection between polygons and catch errors.
