@@ -1,12 +1,12 @@
-#'@name RLetter-package
-#'@aliases RLetter
+#'@name RShapeTarget-package
+#'@aliases RShapeTarget
 #'@docType package
-#'@title Letter Target Distributions
+#'@title Shape Target Distributions
 #'@author Pierre E. Jacob <pierre.jacob.work@@gmail.com>
-#'@description This package allows to create 2-dimensional probability distributions from letters and words. 
+#'@description This package allows to create 2-dimensional probability distributions from SVG shapes. 
 #'@details It's kinda fun and it allows to create multimodal target densities easily.
 #'
-#'The idea is that a letter is a shape, and we can define a probability density function proportional
+#'The idea is that a shape is essentially a set and we can define a probability density function proportional
 #'to 
 #'\itemize{
 #'\item 1 when x is inside the shape
@@ -20,5 +20,5 @@
 #' The parameter lambda controls the smoothness
 #' @seealso \code{\link{create_target_from_word}}
 #' @keywords package
-#' @useDynLib RLetter
+#' @useDynLib RShapeTarget
 NULL

@@ -17,13 +17,13 @@ create_svg_letter <- function(letter){
   if (!(letter %in% letters || letter %in% LETTERS)){
     stop("argument is not a letter")
   }
-  svg <- xmlTreeParse(system.file(package = "RLetter", "data/a.svg"), useInternalNodes=TRUE, addAttributeNamespaces=TRUE, fullNamespaceInfo=FALSE)
+  svg <- xmlTreeParse(system.file(package = "RShapeTarget", "data/a.svg"), useInternalNodes=TRUE, addAttributeNamespaces=TRUE, fullNamespaceInfo=FALSE)
   root <- xmlRoot(svg)
   xmlValue(root[["g"]][["text"]][["tspan"]]) <- letter
   if (is.na(str_locate(string=letter, pattern="[a-z]")[,1])){
-    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RLetter", "data/"), letter, "_uppercase_path.svg")))
+    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RShapeTarget", "data/"), letter, "_uppercase_path.svg")))
   } else {
-    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RLetter", "data/"), letter, "_path.svg")))
+    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RShapeTarget", "data/"), letter, "_path.svg")))
   }
   print(file_name)
   saveXML(doc=root, file=file_name)

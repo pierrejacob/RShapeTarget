@@ -1,10 +1,10 @@
 # remove all objects
 rm(list = ls())
 # try to detach the package if it was already loaded
-try(detach(package:RLetter, unload = TRUE), silent = TRUE)
+try(detach(package:RShapeTarget, unload = TRUE), silent = TRUE)
 # load the package
 library(PAWL)
-library(RLetter)
+library(RShapeTarget)
 
 word <- create_target_from_word(word="yeah", lambda=0.5)
 # starting points for MCMC algorithms

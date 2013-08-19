@@ -1,12 +1,13 @@
-Package: RLetter
+Package: RShapeTarget
 Type: Package
-Title: What the package does (short line)
+Title: Target Distributions based on shapes
 Version: 1.0
 Date: 2013-08-18
-Author: Who wrote it
-Maintainer: Who to complain to <yourfault@somewhere.net>
-Description: More about what it does (maybe more than one line)
-License: What Licence is it under ?
+Author: Pierre E. Jacob <pierre.jacob.work@gmail.com>
+Maintainer: Pierre E. Jacob <pierre.jacob.work@gmail.com>
+Description: This package allows to create 2-dimensional probability
+    distributions from SVG shapes.
+License: GPL (>= 3)
 Depends:
     Rcpp (>= 0.10.4),
     XML,
@@ -16,11 +17,11 @@ Depends:
 LinkingTo: Rcpp
 Collate:
     'create_svg_letter.R'
-    'RcppExports.R'
     'extract_paths.R'
     'distance_to_polygon.R'
     'target_distribution.R'
     'find_inner_polygons.R'
-    'RLetter-package.R'
     'shape_from_polygons.R'
     'operations_on_polygons.R'
+    'RShapeTarget-package.R'
+    'RcppExports.R'

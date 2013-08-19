@@ -7,7 +7,7 @@ using namespace Rcpp;
 
 // rcpp_hello_world
 List rcpp_hello_world();
-RcppExport SEXP RLetter_rcpp_hello_world() {
+RcppExport SEXP RShapeTarget_rcpp_hello_world() {
 BEGIN_RCPP
     SEXP __sexp_result;
     {

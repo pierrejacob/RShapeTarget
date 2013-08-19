@@ -71,9 +71,9 @@ extract_paths_from_letter <- function(letter){
     stop("argument is not a letter")
   }
   if (is.na(str_locate(string=letter, pattern="[a-z]")[,1])){
-    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RLetter", "data/"), letter, "_uppercase_path.svg")))
+    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RShapeTarget", "data/"), letter, "_uppercase_path.svg")))
   } else {
-    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RLetter", "data/"), letter, "_path.svg")))
+    file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RShapeTarget", "data/"), letter, "_path.svg")))
   }
   # retrieve the SVG file corresponding to the letter
   svg <- xmlTreeParse(file_name, useInternalNodes=TRUE, addAttributeNamespaces=TRUE, fullNamespaceInfo=FALSE)
