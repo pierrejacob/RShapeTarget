@@ -5,6 +5,23 @@
 
 using namespace Rcpp;
 
+// dist_point_to_poly_C_
+double dist_point_to_poly_C_(NumericVector point, NumericMatrix polygon, List ABC);
+RcppExport SEXP RShapeTarget_dist_point_to_poly_C_(SEXP pointSEXP, SEXP polygonSEXP, SEXP ABCSEXP) {
+BEGIN_RCPP
+    SEXP __sexp_result;
+    {
+        Rcpp::RNGScope __rngScope;
+        NumericVector point = Rcpp::as<NumericVector >(pointSEXP);
+        NumericMatrix polygon = Rcpp::as<NumericMatrix >(polygonSEXP);
+        List ABC = Rcpp::as<List >(ABCSEXP);
+        double __result = dist_point_to_poly_C_(point, polygon, ABC);
+        PROTECT(__sexp_result = Rcpp::wrap(__result));
+    }
+    UNPROTECT(1);
+    return __sexp_result;
+END_RCPP
+}
 // rcpp_hello_world
 List rcpp_hello_world();
 RcppExport SEXP RShapeTarget_rcpp_hello_world() {

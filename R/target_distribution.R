@@ -22,29 +22,25 @@ create_target_from_word <- function(word, lambda=1){
   return(list(logd=log_word_density, algo_parameters=algo_parameters,
               bounding_box=bounding_box))
 }
-#' @export
-create_target_from_words <- function(words, lambda=1){
-  if (length(words) == 0 && !(class(words)=="character")){
-    stop("'words' should be a non-empty string")
-  }
-  words <- str_split(words, pattern="\\s")[[1]]
-  result <- list()
-  for (word in words){
-    result[[length(result)+1]] <- extract_paths_from_word(word)
-  }
-#   lbox <- lapply(X=result, 
-#                  FUN=function(x) get_box_polygon(polygon=x, xfrac=0.5, yfrac=0.1))
-#   lboxwidth <- lapply(X=lbox, FUN= function(box){ r <- range(box[,1]); return(r[2] - r[1])})
-#   maxwidth <- max(unlist(lboxwidth))
-  # instead of hard coded 20, I should be able to get something sensible from the letters
-  polygons <- combine_polygons(sequence_of_polygons=result, shift=0)
-  bounding_box <- get_box_polygon(polygons)
-  shape <- shape_from_polygons(polygons)
-  algo_parameters <- list(shape=shape, lambda=lambda)
-  f <- function(x, l) log_word_density(x, algo_parameters)
-  return(list(logd=log_word_density, algo_parameters=algo_parameters,
-              bounding_box=bounding_box))
-}
+##### make a function for sentences instead of words?
+# #' @export
+# create_target_from_words <- function(words, lambda=1){
+#   if (length(words) == 0 && !(class(words)=="character")){
+#     stop("'words' should be a non-empty string")
+#   }
+#   words <- str_split(words, pattern="\\s")[[1]]
+#   result <- list()
+#   for (word in words){
+#     result[[length(result)+1]] <- extract_paths_from_word(word)
+#   }
+#   polygons <- combine_polygons(sequence_of_polygons=result, shift=0)
+#   bounding_box <- get_box_polygon(polygons)
+#   shape <- shape_from_polygons(polygons)
+#   algo_parameters <- list(shape=shape, lambda=lambda)
+#   f <- function(x, l) log_word_density(x, algo_parameters)
+#   return(list(logd=log_word_density, algo_parameters=algo_parameters,
+#               bounding_box=bounding_box))
+# }
 
 #' @rdname log_word_density
 #' @name log_word_density
@@ -87,7 +83,7 @@ log_word_density <- function(x, algo_parameters){
   for (index in seq_along(shape$outer_polygons)){
     logpdf[indices_outside_points] <- pmax(logpdf[indices_outside_points],
                  (-1/(2*lambda)) *
-                   dist_points_to_poly_faster(x[indices_outside_points,], shape$outer_polygons[[index]],
+                   dist_points_to_poly(x[indices_outside_points,], shape$outer_polygons[[index]],
                                               shape$outer_polygons_ABC[[index]]))
   }
   # For each inner polygon, if some points are inside it,
@@ -95,12 +91,42 @@ log_word_density <- function(x, algo_parameters){
   for (index in seq_along(shape$inner_polygons)){
     if (length(which(index_inner_polygon == index))>0){
       logpdf[which(index_inner_polygon == index)] <- (-1/(2*lambda)) *
-        dist_points_to_poly_faster(x[which(index_inner_polygon == index),], shape$inner_polygons[[index]],
+        dist_points_to_poly(x[which(index_inner_polygon == index),], shape$inner_polygons[[index]],
                                    shape$inner_polygons_ABC[[index]])
     }
   }
   # The rest are inside an outer polygon but not inside an inner polygon
   # so they must be on the surface.
   logpdf[is.infinite(logpdf)] <- 0
+  return(logpdf)
+}
+
+#' @export
+create_target_from_shape <- function(file_name, lambda=1){
+  polygons <- extract_paths_from_svg(file_name)
+  bounding_box <- get_box_polygon(polygons)
+  shape <- shape_from_polygons(polygons)
+  algo_parameters <- list(shape=shape, lambda=lambda)
+  f <- function(x, l) log_shape_density(x, algo_parameters)
+  return(list(logd=log_shape_density, algo_parameters=algo_parameters,
+              bounding_box=bounding_box))
+}
+
+#' @export
+log_shape_density <- function(x, algo_parameters){
+  shape <- algo_parameters$shape
+  lambda <- algo_parameters$lambda
+  logpdf <- rep(-Inf, dim(x)[1])
+  
+  for (index in seq_along(shape$outer_polygons)){
+    logpdf <- pmax(logpdf, (-1/(2*lambda)) *
+                       dist_points_to_poly(x, shape$outer_polygons[[index]],
+                                                     shape$outer_polygons_ABC[[index]]))
+  }
+  for (index in seq_along(shape$inner_polygons)){
+    logpdf <- pmax(logpdf, (-1/(2*lambda)) *
+      dist_points_to_poly(x, shape$inner_polygons[[index]],
+                                 shape$inner_polygons_ABC[[index]]))
+  }
   return(logpdf)
 }

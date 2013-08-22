@@ -21,4 +21,7 @@
   This function takes a point and a list of arguments and
   returns the value of the log density function.
 }
+\details{
+  #
+}
 

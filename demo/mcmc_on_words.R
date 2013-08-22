@@ -6,7 +6,7 @@ try(detach(package:RShapeTarget, unload = TRUE), silent = TRUE)
 library(PAWL)
 library(RShapeTarget)
 
-word <- create_target_from_word(word="yeah", lambda=0.5)
+word <- create_target_from_word(word="Louise", lambda=0.5)
 # starting points for MCMC algorithms
 rinit <- function(size)  csr(word$bounding_box, size)
 # creating the target object

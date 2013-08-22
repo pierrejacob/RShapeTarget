@@ -25,3 +25,4 @@ Collate:
     'operations_on_polygons.R'
     'RShapeTarget-package.R'
     'RcppExports.R'
+    'distance_C.R'

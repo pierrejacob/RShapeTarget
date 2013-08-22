@@ -1,15 +1,3 @@
-#' @rdname dist_point_to_poly
-#' @name dist_point_to_poly
-#' @aliases dist_point_to_poly
-#' @title Compute distance between a point and a polygon
-#' @description
-#' Taken from \url{http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-to-polygon/content/p_poly_dist.m}
-#' @param one_point 1x2 matrix representing one point.
-#' @param polygon nx2 matrix representing a polygon; 
-#' it is assumed that the final point is equal to the first one, i.e. the first row of the matrix
-#' equals the last one.
-#' @return A list with the distance between point and polygon and the corresponding point.
-#' @export
 dist_point_to_poly <- function(one_point, polygon){
   #   % linear parameters of segments that connect the vertices
   #   % Ax + By + C = 0
@@ -65,7 +53,7 @@ dist_point_to_poly <- function(one_point, polygon){
   return(list(point=matrix(c(x_poly, y_poly), ncol = 2), distance = d))
 }
 
-dist_point_to_poly_faster <- function(one_point, polygon, ABC){
+dist_point_to_poly_ <- function(one_point, polygon, ABC){
   x <- one_point[1]
   y <-  one_point[2]
   xv <- polygon[,1]
@@ -113,26 +101,15 @@ dist_point_to_poly_faster <- function(one_point, polygon, ABC){
   return(d)
 }
 
-#' @rdname dist_points_to_poly
-#' @name dist_points_to_poly
-#' @aliases dist_points_to_poly
-#' @title Compute distance between multiple points and a polygon
-#' @description
-#' Just calls \code{\link{dist_point_to_poly}} multiple times.
-#' @param points mx2 matrix representing m points.
-#' @param polygon nx2 matrix representing a polygon; 
-#' it is assumed that the final point is equal to the first one, i.e. the first row of the matrix
-#' equals the last one.
-#' @return The vector of distances between the points and the polygon.
-#' @export
-dist_points_to_poly <- function(points, polygon){
+
+dist_points_to_poly_reference <- function(points, polygon){
   points <- matrix(points, ncol = 2)
   return(sapply(X=1:(dim(points)[1]), 
                 FUN=function(x) dist_point_to_poly(one_point=points[x,], polygon=polygon)$distance))
 }
-
-dist_points_to_poly_faster <- function(points, polygon, ABC){
+# deprecated since there's the same function in Rcpp
+dist_points_to_poly_R <- function(points, polygon, ABC){
   points <- matrix(points, ncol = 2)
   return(sapply(X=1:(dim(points)[1]), 
-                FUN=function(x) dist_point_to_poly_faster(one_point=points[x,], polygon=polygon, ABC=ABC)))
+                FUN=function(x) dist_point_to_poly_(one_point=points[x,], polygon=polygon, ABC=ABC)))
 }

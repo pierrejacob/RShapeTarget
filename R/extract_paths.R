@@ -13,8 +13,13 @@ curve_to_segment <- function(x){
 }
 
 # this function removes the letters, and deals with the curve points
+
+# this function removes the letters, and deals with the curve points
 remove_letters <- function(x){
-  indices_letter <- which(str_locate(x, "[A-Z]")[,1] == 1)
+  # I remove the "z" at the end if any
+  x <- x[x != "Z"]
+  x <- x[x != "z"]
+  indices_letter <- which(str_locate(x, "[A-Za-z]")[,1] == 1)
   indices_C <- which(str_locate(x, "[C]")[,1] == 1)
   index <- 1
   n <- length(x)
@@ -27,6 +32,9 @@ remove_letters <- function(x){
         seq_C <- curve_to_segment(seq_C)
         res <- c(res, seq_C)
         index <- endC+1
+      } else {
+        # I just drop the letter and do nothing
+        index <- index + 1
       }
     } else {
       res <- c(res, x[index])
@@ -76,13 +84,14 @@ extract_paths_from_letter <- function(letter){
     file_name <- suppressWarnings(normalizePath(paste0(system.file(package = "RShapeTarget", "data/"), letter, "_path.svg")))
   }
   # retrieve the SVG file corresponding to the letter
-  svg <- xmlTreeParse(file_name, useInternalNodes=TRUE, addAttributeNamespaces=TRUE, fullNamespaceInfo=FALSE)
-  root <- xmlRoot(svg)
-  # focus on the path corresponding to the letter
-  s <- xmlAttrs(node=root[["g"]][["g"]][["path"]])[["d"]]
-  # unfortunately this path is a bit more complicated than a list of vertices, so we need to 
+  top <- xmlInternalTreeParse(file=file_name, useInternalNodes=TRUE)
+  # retrieve the paths
+  els = xpathApply(doc=top, path="//svg:path[@d]", fun=xmlGetAttr, "d")
+  # collapse them together
+  els <- paste(els, collapse = " ")
+  # unfortunately these paths can be a bit more complicated than a list of vertices, so we need to 
   # process them a bit with extract_paths_.
-  paths <- extract_paths_(s)
+  paths <- extract_paths_(els)
   for (index in seq_along(paths)){
     # SVG y-axis seems to be directed downwards, 
     # which is the opposite of R's standard. Let's negate the y component
@@ -136,4 +145,20 @@ extract_paths_from_word <- function(word, spacing = 0){
     }
   }
   return(combine_polygons(seq_polygons))
+}
+
+#' @export
+extract_paths_from_svg <- function(file_name){
+  top <- xmlInternalTreeParse(file=file_name, useInternalNodes=TRUE)
+  els = xpathApply(doc=top, path="//svg:path[@d]", fun=xmlGetAttr, "d")
+  els <- paste(els, collapse = " ")
+  
+  paths <- extract_paths_(els)
+#   print(paths)
+  for (index in seq_along(paths)){
+    # SVG y-axis seems to be directed downwards, 
+    # which is the opposite of R's standard. Let's negate the y component
+    paths[[index]][,2] <- -paths[[index]][,2]
+  }
+  return(paths)
 }
