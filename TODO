@@ -1,15 +1,7 @@
 SVG Path standard:
 http://www.w3.org/TR/SVG/paths.html
 
-Functions to compute (fast) distance to polygon
-whether or not a point is inside polygon
-
 http://stackoverflow.com/questions/15294343/calculating-the-distance-between-polygon-and-point-in-r
 https://stat.ethz.ch/pipermail/r-sig-geo/2010-January/007481.html
 http://cran.r-project.org/web/packages/gdistance/gdistance.pdf
 http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-to-polygon/content/p_poly_dist.m
-
-
-##
-- The words work but not the sentences yet (create_target_from_words), because I have to pick a spacing between words...
-- Try to tackle arbitrary shapes from inkscape, make sure to check for intersection between polygons and catch errors.

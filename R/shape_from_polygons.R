@@ -1,5 +1,12 @@
-# precomputes some quantities useful to compute
-# the distance between a point and polygon
+#' @rdname compute_ABC
+#' @name compute_ABC
+#' @aliases compute_ABC
+#' @title Pre compute quantities
+#' @description
+#' precomputes some quantities specific to the given polygon, to optimize subsequent distance computations.
+#' @param polygon nx2 matrix representing a polygon; 
+#' @return a list of precomputed quantities
+#' @export
 compute_ABC <- function(polygon){
   xv <- polygon[,1]
   yv <- polygon[,2]

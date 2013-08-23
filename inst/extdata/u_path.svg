@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="744.09448"
+   height="1052.3622"
+   id="svg2"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="u_path.svg">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="0.22425739"
+     inkscape:cx="372.04724"
+     inkscape:cy="526.18109"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4" />
+  <metaextdata
+     id="metaextdata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metaextdata>
+  <g
+     id="layer1">
+    <g
+       style="font-size:40px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+       id="text2985">
+      <path
+         d="M 269.11273,469.44366 269.11273,456.20148 272.70648,456.20148 272.70648,469.30695 C 272.70647,471.37727 273.11012,472.93325 273.91742,473.97491 274.7247,475.00356 275.93564,475.51789 277.55023,475.51788 279.49032,475.51789 281.02027,474.8994 282.14008,473.66241 283.27287,472.42544 283.83928,470.73924 283.83929,468.60382 L 283.83929,456.20148 287.43304,456.20148 287.43304,478.07648 283.83929,478.07648 283.83929,474.7171 C 282.96688,476.04523 281.95126,477.03481 280.79242,477.68585 279.64657,478.32387 278.31194,478.64288 276.78851,478.64288 274.27548,478.64288 272.36793,477.86163 271.06586,476.29913 269.76377,474.73664 269.11273,472.45148 269.11273,469.44366 M 278.1557,455.67413 278.1557,455.67413"
+         style=""
+         id="path2986" />
+    </g>
+  </g>
+</svg>

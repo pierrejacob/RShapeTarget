@@ -5,7 +5,3 @@ dist_point_to_poly_C_ <- function(point, polygon, ABC) {
     .Call('RShapeTarget_dist_point_to_poly_C_', PACKAGE = 'RShapeTarget', point, polygon, ABC)
 }
 
-rcpp_hello_world <- function() {
-    .Call('RShapeTarget_rcpp_hello_world', PACKAGE = 'RShapeTarget')
-}
-

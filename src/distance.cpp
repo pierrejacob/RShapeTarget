@@ -38,12 +38,9 @@ double dist_point_to_poly_C_(NumericVector point, NumericMatrix polygon, List AB
     NumericVector dp = Rcpp::wrap(ifelse(idx, dp_, 100000000.0));
     int ind_min1 = which_min(dv);
     int ind_min2 = which_min(dp);
-    int ind_min = which_min(NumericVector::create(dv(ind_min1), dp(ind_min2)));
-    if (ind_min == 0){
-//      # the closest point is one of the vertices
+    if (dv(ind_min1) < dp(ind_min2)){
       return dv(ind_min1);
     } else {
-//      # the closest point is one of the projections
       return dp(ind_min2);
     }
   }

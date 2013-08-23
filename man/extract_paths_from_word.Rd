@@ -2,7 +2,7 @@
 \alias{extract_paths_from_word}
 \title{Extract list of polygons from a words}
 \usage{
-  extract_paths_from_word(word, spacing = 0)
+  extract_paths_from_word(word, spacing = 5)
 }
 \arguments{
   \item{word}{a character vector made of \code{letters} or

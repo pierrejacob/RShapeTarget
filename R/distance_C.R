@@ -8,9 +8,9 @@
 #' @param polygon nx2 matrix representing a polygon; 
 #' it is assumed that the final point is equal to the first one, i.e. the first row of the matrix
 #' equals the last one.
+#' @param ABC precomputed quantities obtained by calling \code{\link{compute_ABC}}.
 #' @return The vector of distances between the points and the polygon.
 #' @export
-#' 
 dist_points_to_poly <- function(points, polygon, ABC){
   points <- matrix(points, ncol = 2)
   return(sapply(X=1:(dim(points)[1]), 

@@ -10,6 +10,9 @@
   \item{polygon}{nx2 matrix representing a polygon; it is
   assumed that the final point is equal to the first one,
   i.e. the first row of the matrix equals the last one.}
+
+  \item{ABC}{precomputed quantities obtained by calling
+  \code{\link{compute_ABC}}.}
 }
 \value{
   The vector of distances between the points and the

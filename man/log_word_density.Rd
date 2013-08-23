@@ -1,6 +1,6 @@
 \name{log_word_density}
 \alias{log_word_density}
-\title{Log target density function}
+\title{Log target density function from word}
 \usage{
   log_word_density(x, algo_parameters)
 }
@@ -20,8 +20,5 @@
 \description{
   This function takes a point and a list of arguments and
   returns the value of the log density function.
-}
-\details{
-  #
 }
 
