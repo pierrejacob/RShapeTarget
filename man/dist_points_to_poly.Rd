@@ -2,7 +2,7 @@
 \alias{dist_points_to_poly}
 \title{Compute distance between multiple points and a polygon}
 \usage{
-  dist_points_to_poly(points, polygon, ABC)
+dist_points_to_poly(points, polygon, ABC)
 }
 \arguments{
   \item{points}{mx2 matrix representing m points.}
@@ -15,11 +15,10 @@
   \code{\link{compute_ABC}}.}
 }
 \value{
-  The vector of distances between the points and the
-  polygon.
+The vector of distances between the points and the polygon.
 }
 \description{
-  Taken from
-  \url{http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-to-polygon/content/p_poly_dist.m}
+Taken from
+\url{http://www.mathworks.com/matlabcentral/fileexchange/19398-distance-from-a-point-to-polygon/content/p_poly_dist.m}
 }
 

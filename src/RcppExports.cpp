@@ -12,9 +12,9 @@ BEGIN_RCPP
     SEXP __sexp_result;
     {
         Rcpp::RNGScope __rngScope;
-        NumericVector point = Rcpp::as<NumericVector >(pointSEXP);
-        NumericMatrix polygon = Rcpp::as<NumericMatrix >(polygonSEXP);
-        List ABC = Rcpp::as<List >(ABCSEXP);
+        Rcpp::traits::input_parameter< NumericVector >::type point(pointSEXP );
+        Rcpp::traits::input_parameter< NumericMatrix >::type polygon(polygonSEXP );
+        Rcpp::traits::input_parameter< List >::type ABC(ABCSEXP );
         double __result = dist_point_to_poly_C_(point, polygon, ABC);
         PROTECT(__sexp_result = Rcpp::wrap(__result));
     }
